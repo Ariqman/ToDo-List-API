@@ -19,6 +19,12 @@ class AdminController extends Controller
             ]);
         }
 
+        public function deleteUser($id)
+        {
+            //
+            return User::destroy($id);
+        }
+
         public function updateUser(Request $request,$id)
         {
             //
