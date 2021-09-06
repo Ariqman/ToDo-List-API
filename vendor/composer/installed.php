@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'e718a32354e584b57bc347ecb9f6152644e67866',
+    'reference' => 'e117ebacbc1fa0393ba10fb704a494a9daf2d32c',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -42,15 +42,6 @@
       array (
         0 => '*',
       ),
-    ),
-    'dflydev/dot-access-data' => 
-    array (
-      'pretty_version' => 'v3.0.1',
-      'version' => '3.0.1.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '0992cc19268b259a39e86f296da5f0677841f42c',
     ),
     'doctrine/inflector' => 
     array (
@@ -436,7 +427,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'e718a32354e584b57bc347ecb9f6152644e67866',
+      'reference' => 'e117ebacbc1fa0393ba10fb704a494a9daf2d32c',
     ),
     'laravel/sail' => 
     array (
@@ -465,23 +456,23 @@
       ),
       'reference' => '04ad32c1a3328081097a181875733fa51f402083',
     ),
+    'lcobucci/jwt' => 
+    array (
+      'pretty_version' => '3.3.3',
+      'version' => '3.3.3.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'c1123697f6a2ec29162b82f170dd4a491f524773',
+    ),
     'league/commonmark' => 
     array (
-      'pretty_version' => '2.0.2',
-      'version' => '2.0.2.0',
+      'pretty_version' => '1.6.6',
+      'version' => '1.6.6.0',
       'aliases' => 
       array (
       ),
-      'reference' => '2df87709f44b0dd733df86aef0830dce9b1f0f13',
-    ),
-    'league/config' => 
-    array (
-      'pretty_version' => 'v1.1.1',
-      'version' => '1.1.1.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'a9d39eeeb6cc49d10a6e6c36f22c4c1f4a767f3e',
+      'reference' => 'c4228d11e30d7493c6836d20872f9582d8ba6dcf',
     ),
     'league/flysystem' => 
     array (
@@ -539,6 +530,15 @@
         0 => '1.10.2',
       ),
     ),
+    'namshi/jose' => 
+    array (
+      'pretty_version' => '7.2.3',
+      'version' => '7.2.3.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '89a24d7eb3040e285dd5925fcad992378b82bcff',
+    ),
     'nesbot/carbon' => 
     array (
       'pretty_version' => '2.52.0',
@@ -547,24 +547,6 @@
       array (
       ),
       'reference' => '369c0e2737c56a0f39c946dd261855255a6fccbe',
-    ),
-    'nette/schema' => 
-    array (
-      'pretty_version' => 'v1.2.1',
-      'version' => '1.2.1.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'f5ed39fc96358f922cedfd1e516f0dadf5d2be0d',
-    ),
-    'nette/utils' => 
-    array (
-      'pretty_version' => 'v3.2.3',
-      'version' => '3.2.3.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '5c36cc1ba9bb6abb8a9e425cf054e0c3fd5b9822',
     ),
     'nikic/php-parser' => 
     array (
@@ -1172,6 +1154,15 @@
       ),
       'reference' => '9174a3d80210dca8daa7f31fec659150bbeabfc6',
     ),
+    'symfony/polyfill-php56' => 
+    array (
+      'pretty_version' => 'v1.20.0',
+      'version' => '1.20.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '54b8cd7e6c1643d78d011f3be89f3ef1f9f4c675',
+    ),
     'symfony/polyfill-php72' => 
     array (
       'pretty_version' => 'v1.23.0',
@@ -1295,6 +1286,15 @@
       array (
       ),
       'reference' => 'b43b05cf43c1b6d849478965062b6ef73e223bb5',
+    ),
+    'tymon/jwt-auth' => 
+    array (
+      'pretty_version' => '1.0.2',
+      'version' => '1.0.2.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'e588cb719539366c0e2f6017f975379cb73e9680',
     ),
     'vlucas/phpdotenv' => 
     array (
