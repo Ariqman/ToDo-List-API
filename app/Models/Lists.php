@@ -10,10 +10,10 @@ class lists extends Model
     use HasFactory;
 
     protected $fillable = [
+        'user_id',
         'title',
         'status',
         'image', 
         'description'
     ];
-
 }
