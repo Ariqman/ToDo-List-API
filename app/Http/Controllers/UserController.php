@@ -11,8 +11,9 @@ class UserController extends Controller
         $this->middleware('auth:api');
     }
 
-    public function __invoke(Request $request)
+    public function home(Request $request)
     {
-        return $request->user();
+        return response()
+        ->json(['Status'=> 'Success','Message'=>'Data User Didapatkan!','Data'=>$request->user()]);
     }
 }

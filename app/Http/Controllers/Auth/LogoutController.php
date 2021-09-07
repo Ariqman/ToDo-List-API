@@ -17,6 +17,6 @@ class LogoutController extends Controller
     {
         auth()->logout();
 
-        return response ('Berhasil Logout');
+        return response()->json(['Status'=> 'Success','Message'=>'Jangan Lupa Kembali !'],200);
     }
 }

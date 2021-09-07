@@ -6,4 +6,4 @@ Route::namespace ('Auth')->group(function(){
     Route::post('logout','LogoutController@logout');
 });
 
-Route::get('home','UserController@__invoke');
+Route::get('home','UserController@home');

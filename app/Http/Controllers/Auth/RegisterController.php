@@ -21,8 +21,9 @@ class RegisterController extends Controller
             'name'=>request('name'),
             'email'=>request('email'),
             'password'=>bcrypt(request('password'))
+            
         ]);
 
-        return response('Terima Kasih Sudah Mendaftar!');
+        return response()->json(['Status'=> 'Success','Message'=>'Terima Kasih Sudah Mendaftar!'],200);
     }
 }

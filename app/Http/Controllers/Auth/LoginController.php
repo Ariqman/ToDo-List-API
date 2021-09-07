@@ -23,10 +23,12 @@ class LoginController extends Controller
 
         if (!$token = auth()->attempt($request-> only('email','password'))){
 
-            return response('Not Authorized',401);
+            return response()
+            ->json(['Status'=>'Error','Message'=>'Not Authorized'],401);
         }
 
-        return response()->json(compact('token'));
+        return response()
+        ->json(['Status'=> 'Success','Message'=>'Login Berhasil !','Auth'=>compact('token'),'Data'=>$request->user()]);
 
     }
 }
