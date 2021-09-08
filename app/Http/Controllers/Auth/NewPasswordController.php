@@ -25,7 +25,8 @@ class NewPasswordController extends Controller
 
         if ($status == Password::RESET_LINK_SENT) {
             return [
-                'status' => __($status)
+                'status' =>'Success',
+                'message' => __($status)
             ];
         }
 
@@ -58,6 +59,7 @@ class NewPasswordController extends Controller
 
         if ($status == Password::PASSWORD_RESET) {
             return response([
+                'Status'=>'Success',
                 'message'=> 'Password reset successfully'
             ]);
         }
