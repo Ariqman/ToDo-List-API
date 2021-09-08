@@ -15,6 +15,6 @@ Route::get('/', function () {
 Route::post('/login', [AdminController::class, 'adminLogin']);
 Route::post('/logout', [AdminController::class, 'logout']);
 
-Route::post('/list-user', [AdminController::class, 'index'])->middleware(['auth:api', 'scope:admin']);
-Route::post('/update-user/{id}', [AdminController::class, 'update'])->middleware(['auth:api', 'scope:admin']);
-Route::post('/delete-user/{id}',[AdminController::class,'deleteUser'])->middleware(['auth:api', 'scope:admin']);
+Route::post('/list-user', [AdminController::class, 'index'])->middleware(['auth:admin', 'scope:admin']);
+Route::post('/update-user/{id}', [AdminController::class, 'update'])->middleware(['auth:admin', 'scope:admin']);
+Route::post('/delete-user/{id}',[AdminController::class,'deleteUser'])->middleware(['auth:admin', 'scope:admin']);
