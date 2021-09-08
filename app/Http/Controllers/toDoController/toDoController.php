@@ -5,14 +5,21 @@ namespace App\Http\Controllers\toDoController;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Validator;
 
 use App\Models\Lists;
+use App\Rules\checkStatus;
 
 class toDoController extends Controller
 {
     public function index()
     {
         return lists::all();
+    }
+
+    public function detail($id)
+    {
+        return lists::find($id);
     }
 
     public function create(request $request)
@@ -60,12 +67,21 @@ class toDoController extends Controller
 
     public function updateStatus(request $request, $id)
     {
-        $list = lists::find($id);
+        $validator = Validator::make($request->all(),
+            ['status' => new checkStatus()]
+        );
+        
+        if ($validator->fails()) {
+            return response()->json(['status' => 'error', 'message' => $validator->errors()->first() ], 400);
+        }
 
-        $list->status = $request->status;
-        $list->save();
-
-        return response()->json(['status' => 'success', 'message' => 'status telah diperbarui', 'data' => $list], 200);
+        else{
+            $list = lists::find($id);
+            $list->status = ucwords($request->status);
+            $list->save();
+            return response()->json(['status' => 'success', 'message' => 'status telah diperbarui', 'data' => $list], 200);
+        }
+        
     }
 
     public function delete($id)
