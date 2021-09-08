@@ -42,20 +42,25 @@ class AdminController extends Controller
             $userinput=User::find($id);
             $input = $request->all();
 
-            #validator
-            $validator = Validator::make($input, [ 
-                'email' => 'unique:users', 
-                'email' => 'regex:/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix'
-            ]);
-            if($validator->fails()) {
-                return response()->json([
-                    "success" => "error",
-                    "message" => "email already in use or invalid",
-                    ]); }
-            
-            #Update data
-            $userinput->name = $input['name'];
-            $userinput->email = $input['email'];
+            #validator and update email
+            if(isset($input['email'])) {
+                $validator = Validator::make($input, [ 
+                    'email' => 'unique:users', 
+                    'email' => 'regex:/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix'
+                ]);
+                if($validator->fails()) {
+                    return response()->json([
+                        "success" => "error",
+                        "message" => "email already in use or invalid",
+                        ]); }
+                $userinput->email = $input['email'];
+                }
+
+            #Update data name
+            if(isset($input['name'])) {
+                $userinput->name = $input['name']; }
+
+            #Update role ( only superadmin )
             if($user->role == "superadmin")  {
                 if($input['role'] == "admin" or $input['role'] == "user") {
                     $userinput->role = $input['role'];
