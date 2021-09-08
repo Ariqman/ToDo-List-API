@@ -13,7 +13,8 @@ Route::get('/', function () {
 });
 
 Route::post('/login', [AdminController::class, 'adminLogin']);
-Route::get('/listUser', [AdminController::class, 'index'])->middleware(['auth:api', 'scope:admin']);
-Route::get('/deleteUser/{id}',[AdminController::class,'deleteUser'])->middleware(['auth:api', 'scope:admin']);
-Route::get('/changeToUser/{id}',[AdminController::class,'updateUser'])->middleware(['auth:api', 'scope:superadmin']);
-Route::get('/changeToAdmin/{id}',[AdminController::class,'updateAdmin'])->middleware(['auth:api', 'scope:superadmin']);
+Route::post('/logout', [AdminController::class, 'logout']);
+
+Route::post('/list-user', [AdminController::class, 'index'])->middleware(['auth:api', 'scope:admin']);
+Route::post('/update-user/{id}', [AdminController::class, 'update'])->middleware(['auth:api', 'scope:admin']);
+Route::post('/delete-user/{id}',[AdminController::class,'deleteUser'])->middleware(['auth:api', 'scope:admin']);
