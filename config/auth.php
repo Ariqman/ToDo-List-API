@@ -41,7 +41,7 @@ return [
             'provider' => 'users',
         ],
         
-        'api' => [
+        'admin' => [
             'driver' => 'passport',
             'provider' => 'users',
         ],
