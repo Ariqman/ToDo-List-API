@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Exceptions;
+
 use Illuminate\Support\Facades\Response;
 use Exception;
 use Throwable;
@@ -41,33 +42,33 @@ class Handler extends ExceptionHandler
      */
     public function register()
     {
-        $this->renderable(function(TokenInvalidException $e, $request){
-            return Response::json(['status'=>'error','message'=>'Invalid token'],401);
-    });
-    $this->renderable(function (TokenExpiredException $e, $request) {
-        return Response::json(['status'=>'error','error'=>'Token has Expired'],401);
-    });
+        $this->renderable(function (TokenInvalidException $e, $request) {
+            return Response::json(['status' => 'error', 'message' => 'Invalid token'], 401);
+        });
+        $this->renderable(function (TokenExpiredException $e, $request) {
+            return Response::json(['status' => 'error', 'error' => 'Token has Expired'], 401);
+        });
 
-    $this->renderable(function (JWTException $e, $request) {
-        return Response::json(['status'=>'error','error'=>'Token not parsed'],401);
-    });
+        $this->renderable(function (JWTException $e, $request) {
+            return Response::json(['status' => 'error', 'error' => 'Token not parsed'], 401);
+        });
     }
     protected function unauthenticated($request, AuthenticationException $exception)
-{
-    if ($request->expectsJson()) {
-        $json = [
-            'isAuth'=>false,
-            'message' => $exception->getMessage()
-        ];
-        return response()
-            ->json(['Status'=>'Error','Message'=>'Not Authorized'],401);
+    {
+        if ($request->expectsJson()) {
+            $json = [
+                'isAuth' => false,
+                'message' => $exception->getMessage()
+            ];
+            return response()
+                ->json(['Status' => 'Error', 'Message' => 'Not Authorized'], 401);
+        }
+        $guard = array_get($exception->guards(), 0);
+        switch ($guard) {
+            default:
+                $login = 'login';
+                break;
+        }
+        return redirect()->guest(route($login));
     }
-    $guard = array_get($exception->guards(),0);
-    switch ($guard) {
-        default:
-            $login = 'login';
-            break;
-    }
-    return redirect()->guest(route($login));
-}
 }
