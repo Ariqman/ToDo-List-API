@@ -9,12 +9,23 @@ use Illuminate\Support\Facades\Validator;
 
 use App\Models\Lists;
 use App\Rules\checkStatus;
+use Tymon\JWTAuth\Facades\JWTAuth;
 
 class toDoController extends Controller
 {
+    public function __construct()
+    {
+        $this->user = JWTAuth::parseToken()->authenticate();
+    }
+
     public function index()
     {
         return lists::all();
+    }
+
+    public function userIndex($id)
+    {
+        return lists::where('user_id',$id)->get();
     }
 
     public function detail($id)
@@ -77,7 +88,7 @@ class toDoController extends Controller
 
         else{
             $list = lists::find($id);
-            $list->status = ucwords($request->status);
+            $list->status = strtolower($request->status);
             $list->save();
             return response()->json(['status' => 'success', 'message' => 'status telah diperbarui', 'data' => $list], 200);
         }
