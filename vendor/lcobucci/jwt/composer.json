@@ -4,7 +4,11 @@
     "type": "library",
     "authors": [
         {
+<<<<<<< HEAD
             "name": "Luís Otávio Cobucci Oblonczyk",
+=======
+            "name": "Luís Cobucci",
+>>>>>>> a82722595a377a14b130b943840bb280b734e750
             "email": "lcobucci@gmail.com",
             "role": "Developer"
         }
@@ -17,6 +21,7 @@
         "BSD-3-Clause"
     ],
     "require": {
+<<<<<<< HEAD
         "php": "^5.6 || ^7.0",
         "ext-mbstring": "*",
         "ext-openssl": "*"
@@ -27,6 +32,25 @@
         "phpmd/phpmd": "~2.2",
         "phpunit/php-invoker": "~1.1",
         "mikey179/vfsstream": "~1.5"
+=======
+        "php": "^7.4 || ^8.0",
+        "ext-mbstring": "*",
+        "ext-openssl": "*",
+        "lcobucci/clock": "^2.0"
+    },
+    "require-dev": {
+        "infection/infection": "^0.20",
+        "lcobucci/coding-standard": "^6.0",
+        "mikey179/vfsstream": "^1.6",
+        "phpbench/phpbench": "^0.17",
+        "phpstan/extension-installer": "^1.0",
+        "phpstan/phpstan": "^0.12",
+        "phpstan/phpstan-deprecation-rules": "^0.12",
+        "phpstan/phpstan-phpunit": "^0.12",
+        "phpstan/phpstan-strict-rules": "^0.12",
+        "phpunit/php-invoker": "^3.1",
+        "phpunit/phpunit": "^9.4"
+>>>>>>> a82722595a377a14b130b943840bb280b734e750
     },
     "autoload": {
         "psr-4": {
@@ -36,6 +60,7 @@
     "autoload-dev": {
         "psr-4": {
             "Lcobucci\\JWT\\": [
+<<<<<<< HEAD
                 "test/unit",
                 "test/functional"
             ]
@@ -44,6 +69,22 @@
     "extra": {
         "branch-alias": {
             "dev-master": "3.1-dev"
+=======
+                "test/_keys",
+                "test/unit",
+                "test/performance"
+            ],
+            "Lcobucci\\JWT\\FunctionalTests\\": "test/functional"
+        }
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "4.0-dev"
+>>>>>>> a82722595a377a14b130b943840bb280b734e750
         }
     }
 }

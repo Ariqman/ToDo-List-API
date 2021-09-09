@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 /**
  * This file is part of Lcobucci\JWT, a simple library to handle JWT and JWS
  *
@@ -89,4 +90,15 @@ final class Key
     {
         return $this->passphrase;
     }
+=======
+declare(strict_types=1);
+
+namespace Lcobucci\JWT\Signer;
+
+interface Key
+{
+    public function contents(): string;
+
+    public function passphrase(): string;
+>>>>>>> a82722595a377a14b130b943840bb280b734e750
 }
