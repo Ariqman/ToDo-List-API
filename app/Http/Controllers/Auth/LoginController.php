@@ -22,7 +22,7 @@ class LoginController extends Controller
 
         ]);
 
-        if (!$token = Auth::attempt($request-> only('email','password'))){
+        if (!$token = Auth::attempt($request->only('email','password'))){
 
             return response()
             ->json(['Status'=>'Error','Message'=>'Not Authorized'],401);
