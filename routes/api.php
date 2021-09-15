@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 <?php
 
 
@@ -28,4 +26,3 @@ Route::post('/login', [UserController::class, 'login']);
 Route::post('/register', [UserController::class, 'register']);
 
 
->>>>>>> a82722595a377a14b130b943840bb280b734e750
